@@ -1,0 +1,159 @@
+﻿<Window x:Class="PROGPOEPart1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROGPOEPart1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800" 
+        BorderBrush="DarkGray"
+        WindowState="Maximized">
+
+    <StackPanel>
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                FontSize="18"
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0 20 0 0"
+                Text="Module Code: "/>
+            <TextBox x:Name="tbModuleCodeMain"
+                Margin="0 20 0 0"
+                Grid.Column="1"
+                Grid.Row="0"/>
+            <TextBlock
+                FontSize="18"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0 20 0 0"
+                Text="Module Name: "/>
+            <TextBox x:Name="tbModuleName"
+                Margin="0 20 0 0"
+                Grid.Column="1"
+                Grid.Row="1"/>
+
+            <TextBlock
+                FontSize="18"
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="0 20 0 0"
+                Text="Number of Credits: "/>
+            <TextBox 
+                Margin="0 20 0 0"
+                Grid.Column="1"
+                Grid.Row="2"/>
+
+            <TextBlock
+                FontSize="18"
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="0 20 0 0"
+                Text="Class hours per week: "/>
+            <TextBox 
+                Margin="0 20 0 0"
+                Grid.Column="1"
+                Grid.Row="3"/>
+            
+            <Grid Grid.Column="2"
+                  Grid.ColumnSpan="2"
+            Margin="40 0 0 0">
+            <DataGrid Name="DG1" AutoGenerateColumns="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Module Code"  />
+                        <DataGridTextColumn Header="Module Name" />
+                        <DataGridTextColumn Header="Credits"  />
+                        <DataGridTextColumn Header="Classes /week" />
+                    </DataGrid.Columns>
+            </DataGrid>
+            </Grid>
+        </Grid>
+
+        <Button x:Name="btnAddModule"
+                Width="200"
+                Content="Add Module"
+                Click="btnAddModule_Click"/>
+
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                FontSize="18"
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0 20 0 0"
+                Text="Date of Study: "/>
+            
+            <DatePicker Margin="0 20 0 0"
+                Grid.Column="1"
+                Grid.Row="0"/>
+
+            <TextBlock
+                FontSize="18"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0 20 0 0"
+                Text="Course Code: "/>
+            <TextBox 
+                Margin="0 20 0 0"
+                Grid.Column="1"
+                Grid.Row="1"/>
+
+            <TextBlock
+                FontSize="18"
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="0 20 0 0"
+                Text="Hours Worked: "/>
+            <TextBox 
+                Margin="0 20 0 0"
+                Grid.Column="1"
+                Grid.Row="2"/>
+
+
+            <Grid Grid.Column="2"
+                  Grid.ColumnSpan="2"
+            Margin="40 0 0 0">
+                <DataGrid Name="DG2" AutoGenerateColumns="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Date"/>
+                        <DataGridTextColumn Header="Course Code"/>
+                        <DataGridTextColumn Header="Hours Worked"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
+
+        <Button x:Name="btnAddStudy"
+                Width="200"
+                Content="Add Study Session"/>
+        
+    </StackPanel>
+</Window>
+
+
+<!--<DataGridHyperlinkColumn Header="Email" />-->
+<!--<DataGridCheckBoxColumn Header="Member" />
+<DataGridComboBoxColumn Header="Order Status" />-->
