@@ -26,6 +26,7 @@ namespace PROGPOEPart1
         public MainWindow()
         {
             InitializeComponent();
+           
         }
 
         Module module = new Module();
@@ -35,13 +36,21 @@ namespace PROGPOEPart1
         private void btnAddModule_Click(object sender, RoutedEventArgs e)
         {
 
-            Application.Current.Shutdown();
+            //Application.Current.Shutdown();
 
             //AddModule am = new AddModule();
             //am.Show();
             //string moduleCode = am.tbModuleCode.Text;
             //tbModuleCodeMain.Text = moduleCode;
             //tbModuleName.Text = moduleCodeTransfer;
+
+            module.ModuleCode = tbModuleCode.Text;
+            module.ModuleName = tbModuleName.Text;
+            module.Credits = Convert.ToInt32(tbCredits.Text);
+            module.NumWeeks = Convert.ToInt32(tbClassHrs.Text);
+
+            dgModule.Items.Add(module);
+
         }
     }
 }

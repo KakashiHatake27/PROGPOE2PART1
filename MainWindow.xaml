@@ -10,6 +10,12 @@
         WindowState="Maximized">
 
     <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush x:Name="_img_bg"
+                                ImageSource="Assets/CLockBG.jpg"
+                                Stretch="Fill"/>
+        </StackPanel.Background>
+
         <Grid Margin="30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -27,18 +33,23 @@
                 FontSize="18"
                 Grid.Row="0"
                 Grid.Column="0"
+                Foreground="White"
                 Margin="0 20 0 0"
                 Text="Module Code: "/>
-            <TextBox x:Name="tbModuleCodeMain"
+            
+            <TextBox x:Name="tbModuleCode"
                 Margin="0 20 0 0"
                 Grid.Column="1"
                 Grid.Row="0"/>
+
             <TextBlock
+                Foreground="White"
                 FontSize="18"
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="0 20 0 0"
                 Text="Module Name: "/>
+            
             <TextBox x:Name="tbModuleName"
                 Margin="0 20 0 0"
                 Grid.Column="1"
@@ -46,37 +57,55 @@
 
             <TextBlock
                 FontSize="18"
+                Foreground="White"
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="0 20 0 0"
                 Text="Number of Credits: "/>
-            <TextBox 
+            
+            <TextBox x:Name="tbCredits"
                 Margin="0 20 0 0"
                 Grid.Column="1"
                 Grid.Row="2"/>
 
             <TextBlock
                 FontSize="18"
+                Foreground="White"
                 Grid.Row="3"
                 Grid.Column="0"
                 Margin="0 20 0 0"
                 Text="Class hours per week: "/>
-            <TextBox 
+            
+            <TextBox x:Name="tbClassHrs"
                 Margin="0 20 0 0"
                 Grid.Column="1"
                 Grid.Row="3"/>
             
             <Grid Grid.Column="2"
                   Grid.ColumnSpan="2"
+                  Grid.Row="0"
+                  Grid.RowSpan="4"
             Margin="40 0 0 0">
-            <DataGrid Name="DG1" AutoGenerateColumns="False" >
+
+                <DataGrid Name="dgModule" 
+                          AutoGenerateColumns="False" >
+
+                        <DataGrid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform>
+
+                            </ScaleTransform>
+                        </TransformGroup>
+                    </DataGrid.RenderTransform>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Module Code"  />
-                        <DataGridTextColumn Header="Module Name" />
-                        <DataGridTextColumn Header="Credits"  />
-                        <DataGridTextColumn Header="Classes /week" />
+
+                            <DataGridTextColumn Header="Module Code" Binding="{Binding ModuleCode}" />
+                        <DataGridTextColumn Header="Module Name" Binding="{Binding ModuleName}" />
+                        <DataGridTextColumn Header="Credits"  Binding="{Binding Credits}" />
+                        <DataGridTextColumn Header="Classes /week" Binding="{Binding NumWeeks}" />
+
                     </DataGrid.Columns>
-            </DataGrid>
+             </DataGrid>
             </Grid>
         </Grid>
 
@@ -101,6 +130,7 @@
             <TextBlock
                 FontSize="18"
                 Grid.Row="0"
+                Foreground="White"
                 Grid.Column="0"
                 Margin="0 20 0 0"
                 Text="Date of Study: "/>
@@ -112,6 +142,7 @@
             <TextBlock
                 FontSize="18"
                 Grid.Row="1"
+                Foreground="White"
                 Grid.Column="0"
                 Margin="0 20 0 0"
                 Text="Course Code: "/>
@@ -123,6 +154,7 @@
             <TextBlock
                 FontSize="18"
                 Grid.Row="2"
+                Foreground="White"
                 Grid.Column="0"
                 Margin="0 20 0 0"
                 Text="Hours Worked: "/>
@@ -133,9 +165,12 @@
 
 
             <Grid Grid.Column="2"
+                  Grid.Row="0"
+                  Grid.RowSpan="3"
                   Grid.ColumnSpan="2"
             Margin="40 0 0 0">
-                <DataGrid Name="DG2" AutoGenerateColumns="False" >
+                <DataGrid Name="dgCourse"
+                          AutoGenerateColumns="False" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Date"/>
                         <DataGridTextColumn Header="Course Code"/>
