@@ -35,21 +35,32 @@ namespace PROGPOEPart1
 
         private void btnAddModule_Click(object sender, RoutedEventArgs e)
         {
+            if ((tbModuleCode.Text == "") && (tbModuleName.Text == "") && (tbCredits.Text == "") && (tbClassHrs.Text == ""))
+            {
+                tbError.Text = "Please complete all necessary fields";
+            }
+            else
+            {
+                tbError.Text = "";
+                module.ModuleCode = tbModuleCode.Text;
+                module.ModuleName = tbModuleName.Text;
+                module.Credits = Convert.ToInt32(tbCredits.Text);
+                module.ClassesPerWeek = Convert.ToInt32(tbClassHrs.Text);
 
-            //Application.Current.Shutdown();
+                dgModule.Items.Add(module);
 
-            //AddModule am = new AddModule();
-            //am.Show();
-            //string moduleCode = am.tbModuleCode.Text;
-            //tbModuleCodeMain.Text = moduleCode;
-            //tbModuleName.Text = moduleCodeTransfer;
+            }
 
-            module.ModuleCode = tbModuleCode.Text;
-            module.ModuleName = tbModuleName.Text;
-            module.Credits = Convert.ToInt32(tbCredits.Text);
-            module.NumWeeks = Convert.ToInt32(tbClassHrs.Text);
 
-            dgModule.Items.Add(module);
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+
+                Application.Current.Shutdown();
+            }
 
         }
     }

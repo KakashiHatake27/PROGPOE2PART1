@@ -36,3 +36,4 @@ C:\Users\Akshdeep\source\repos\PROGPOEPart1\obj\Debug\PROGPOEPart1.csproj.CoreCo
 C:\Users\Akshdeep\source\repos\PROGPOEPart1\obj\Debug\PROGPOEPart1.csproj.CopyComplete
 C:\Users\Akshdeep\source\repos\PROGPOEPart1\obj\Debug\PROGPOEPart1.exe
 C:\Users\Akshdeep\source\repos\PROGPOEPart1\obj\Debug\PROGPOEPart1.pdb
+C:\Users\Akshdeep\source\repos\PROGPOEPart1\obj\Debug\App.baml

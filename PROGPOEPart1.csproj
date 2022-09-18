@@ -126,5 +126,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ClockBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\TwoTone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Clock.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

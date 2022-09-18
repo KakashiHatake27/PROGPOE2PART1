@@ -6,10 +6,13 @@
         xmlns:local="clr-namespace:PROGPOEPart1"
         mc:Ignorable="d"
         Title="Time Management" Height="450" Width="800"
-        BorderBrush="DarkGray">
+        BorderBrush="DarkGray"
+        WindowStyle="None"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
 
 
-    <StackPanel>
+    <Grid>
         <TextBlock
             Background="DarkGray"
             Foreground="Black"
@@ -19,32 +22,13 @@
             FontWeight="Bold"
             Text="Welcome to the Time Management App"/>
 
-        <Button
-            HorizontalAlignment="Center"
-           VerticalAlignment="Center"
-            FontSize="18"
-            Margin="0 80 0 0 "
-            Width="200"
-            Click="Button_Click"
-            Content="Add Module"/>
-
-        <!--Padding=" 20 0 20 0"-->
-
-        <Button x:Name="btnManageHours"
-            HorizontalAlignment="Center"
-           VerticalAlignment="Center"
-            FontSize="18"
-            Width="200"
-            Click="btnManageHours_Click"
-            Margin="0 50 0 0 "
-            Content="Manage Hours"/>
-
         <TextBlock x:Name="tbTimer"
             Margin="20"
+                   VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Foreground="Red"
             Text="*NO MODULES ADDED*"/>
 
-    </StackPanel>
+    </Grid>
 
 </Window>
