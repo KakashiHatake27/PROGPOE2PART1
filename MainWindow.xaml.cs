@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CalcsDLL;
 
 namespace PROGPOEPart1
 {
@@ -50,6 +51,11 @@ namespace PROGPOEPart1
                 dgModule.Items.Add(module);
 
             }
+
+
+
+
+
 
 
         }
