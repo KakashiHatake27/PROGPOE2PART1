@@ -9,6 +9,7 @@
                 <GradientStop Color="DarkGray" Offset="0" />
                 <GradientStop Color="#CCCCFF" Offset="0.5" />
                 <GradientStop Color="DarkGray" Offset="1" />
+            
             </LinearGradientBrush>
             <Style TargetType="{x:Type Button}" x:Key="GradientStyle">
                 <Setter Property="Background" Value="{StaticResource GrayBlueGradientBrush}" />
@@ -16,8 +17,17 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" ClipToBounds="True">
-                            <Rectangle x:Name="innerRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stroke="Transparent" StrokeThickness="20" Fill="{TemplateBinding Background}" RadiusX="20" RadiusY="20" />
+                        <Grid Width="{TemplateBinding Width}" 
+                              Height="{TemplateBinding Height}" 
+                              ClipToBounds="True">
+                            <Rectangle x:Name="innerRectangle" 
+                                       HorizontalAlignment="Stretch" 
+                                       VerticalAlignment="Stretch" 
+                                       Stroke="Transparent" 
+                                       StrokeThickness="20" 
+                                       Fill="{TemplateBinding Background}" 
+                                       RadiusX="20" 
+                                       RadiusY="20" />
                             
                             <DockPanel Name="myContentPresenterDockPanel">
                                 <ContentPresenter x:Name="myContentPresenter" Margin="20" Content="{TemplateBinding  Content}" HorizontalAlignment="Center" TextBlock.Foreground="Black" />
@@ -29,29 +39,38 @@
             </Style>
 
 
-        <Style TargetType="{x:Type Button}" x:Key="Dark">
-            <Setter Property="Background" Value="Black" />
-            <Setter Property="Width" Value="80" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" ClipToBounds="True">
-                            <Rectangle x:Name="innerRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stroke="Transparent" StrokeThickness="20" Fill="{TemplateBinding Background}" RadiusX="20" RadiusY="20" />
-
-                            <DockPanel Name="myContentPresenterDockPanel">
-                                <ContentPresenter x:Name="myContentPresenter" Margin="20" Content="{TemplateBinding  Content}" HorizontalAlignment="Center" TextBlock.Foreground="AliceBlue" />
-                            </DockPanel>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
 
 
-        <Style TargetType="{x:Type TextBlock}" x:Key="TypeOne"
-            >
+        <!--<LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrush">
+            <GradientStop Color="Green" Offset="0" />
+            <GradientStop Color="Blue" Offset="2.0" />
+        </LinearGradientBrush>-->
+
+
+
+
+
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrush">
+            <GradientStop Color="Green" Offset="0" />
+            <GradientStop Color="Blue" Offset="2.0" />
+        </LinearGradientBrush>
+        
+        
+        <Style TargetType="{x:Type TextBlock}" x:Key="TypeOne">
             <Setter Property="Foreground" Value="DodgerBlue"/>
         </Style>
+
+        <!--<Style TargetType="{x:Type ProgressBar}" x:Key="Fancy">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="gradientBrush">
+            <GradientStop Color="Green" Offset="0" />
+            <GradientStop Color="Blue" Offset="2.0" />
+        </LinearGradientBrush>
+  
+                </Setter.Value>
+            </Setter>
+        </Style>-->
         
         
 

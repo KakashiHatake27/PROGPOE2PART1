@@ -11,8 +11,7 @@
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen">
 
-
-    <Grid>
+    <StackPanel>
         <TextBlock
             Background="DarkGray"
             Foreground="Black"
@@ -20,8 +19,17 @@
             Padding="10"
             FontSize="24"
             FontWeight="Bold"
-            Text="Welcome to the Time Management App"/>
+            Text="Welcome to your Time Management App"/>
 
+
+        <TextBlock
+            Foreground="Black"
+            TextAlignment="Center"
+            Padding="10"
+            FontSize="24"
+            FontWeight="Bold"
+            Text="TickNote"/>
+        
         <TextBlock x:Name="tbTimer"
             Margin="20"
                    VerticalAlignment="Center"
@@ -29,6 +37,14 @@
             Foreground="Red"
             Text="*NO MODULES ADDED*"/>
 
-    </Grid>
+
+        <ProgressBar x:Name="pbLoad"
+                     Minimum="0"
+                     Maximum="100" 
+            Height="20" Foreground="{StaticResource gradientBrush}"
+                    
+            Margin="20"/>
+
+   </StackPanel>
 
 </Window>

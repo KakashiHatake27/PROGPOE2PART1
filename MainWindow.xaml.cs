@@ -26,7 +26,7 @@ namespace PROGPOEPart1
         public MainWindow()
         {
             InitializeComponent();
-           
+
         }
 
         Module module = new Module();
@@ -57,6 +57,22 @@ namespace PROGPOEPart1
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             if(MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+
+                Application.Current.Shutdown();
+            }
+
+        }
+
+        private void btnAddStudy_Click(object sender, RoutedEventArgs e)
+        {
+            tbCourseCode.Text = dpStudy.Text;
+        }
+
+        private void imgExit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
 
                 Application.Current.Shutdown();

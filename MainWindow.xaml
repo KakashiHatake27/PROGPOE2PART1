@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROGPOEPart1"
         mc:Ignorable="d"
-        Title="TickNote" Height="800" Width="800" 
+        Title="TickNote" Height="850" Width="800" 
        WindowStyle="None"
         WindowState="Maximized">
 
@@ -16,14 +16,45 @@
                                 Stretch="Fill"/>
         </StackPanel.Background>
 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+          
+
         <Label
             Foreground="DarkCyan"
            Margin=" 0 20 0 0"
+            Grid.Column="0"
+            Grid.ColumnSpan="7"
             HorizontalContentAlignment="Center"
             FontFamily="Verdana"
             FontWeight="ExtraBold"
             FontSize="24"
             Content="WELCOME TO TICKNOTE YOUR PERSONAL STUDY TIME MANAGEMENT APP"/>
+
+            <Image
+           x:Name="imgExit"
+                Grid.Column="7"
+                Grid.Row="0"
+             MouseDown="imgExit_MouseDown"
+            Source="Assets/offImg.png"
+            Height="30"
+            Width="30"
+            HorizontalAlignment="Right"
+            Margin="0 20 50 0"
+            />
+        </Grid>
 
         <Grid Margin="40">
             <Grid.RowDefinitions>
@@ -45,7 +76,7 @@
                 Style="{StaticResource TypeOne}"
                 Margin="0 20 0 0"
                 Text="Module Code: "/>
-            
+
             <TextBox x:Name="tbModuleCode"
                 Margin="0 20 0 0"
                 Grid.Column="1"
@@ -151,8 +182,10 @@
                 Margin="0 20 0 0"
                 Text="Date of Study: "/>
             
-            <DatePicker Margin="0 20 0 0"
+            <DatePicker x:Name="dpStudy" 
+                Margin="0 20 0 0"
                 Grid.Column="1"
+                        
                 Grid.Row="0"/>
 
             <TextBlock
@@ -162,7 +195,8 @@
                 Grid.Column="0"
                 Margin="0 20 0 0"
                 Text="Course Code: "/>
-            <TextBox 
+            
+            <TextBox x:Name="tbCourseCode"
                 Margin="0 20 0 0"
                 Grid.Column="1"
                 Grid.Row="1"/>
@@ -198,20 +232,11 @@
 
 
         <Button x:Name="btnAddStudy"
+                Click="btnAddStudy_Click"
                 Style="{StaticResource GradientStyle}"
                 Width="200"
                 FontSize="18"
                 Content="Add Study Session"/>
-
-        <Button x:Name="btnExit"
-                Click="btnExit_Click"
-                Style="{StaticResource Dark}"
-                Width="110"
-                Margin="50 60 100 0"
-                FontSize="18"
-                HorizontalAlignment="Right"
-                Content="Exit ->"/>
-
     </StackPanel>
 </Window>
 

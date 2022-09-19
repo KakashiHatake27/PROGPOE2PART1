@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
@@ -40,7 +42,10 @@ namespace PROGPOEPart1
         {
             timer++;
             tbTimer.Text = timer.ToString();
-            if (timer == 3)
+            
+            pbLoad.Value= pbLoad.Value+33;
+             
+            if (timer == 4)
             {
                 MainWindow mw = new MainWindow();
                 mw.Show();
